@@ -12,7 +12,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const pages = await getPages();
+  const pages = [{
+    _id: "contactUS",
+    slug: "contact-us",
+    title: "Contact Us"
+  },
+  ...await getPages()
+  ];
 
   return (
     <html lang="en">
